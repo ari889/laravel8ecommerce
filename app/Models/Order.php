@@ -14,7 +14,7 @@ class Order extends Model
     /**
      * order with user one to one relation ship
      */
-    public function users(){
+    public function user(){
         return $this->belongsTo(User::class);
     }
 
