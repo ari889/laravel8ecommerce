@@ -24,9 +24,21 @@
                         <div class="product-gallery">
                           <ul class="slides">
 
-                            <li data-thumb="assets/images/products/{{ $product->image }}">
-                                <img src="assets/images/products/{{ $product->image }}" alt="product thumbnail" />
+                            <li data-thumb="{{ asset('assets/images/products/'.$product->image) }}">
+                                <img src="{{ asset('assets/images/products/'.$product->image) }}" alt="product thumbnail" />
                             </li>
+
+                            @php
+                                $images = explode(',', $product->images);
+                            @endphp
+
+                            @foreach($images as $image)
+                                @if($image)
+                                    <li data-thumb="{{ asset('assets/images/products/'.$image) }}">
+                                        <img src="{{ asset('assets/images/products/'.$image) }}" alt="product thumbnail" />
+                                    </li>
+                                @endif
+                            @endforeach
 
                           </ul>
                         </div>
