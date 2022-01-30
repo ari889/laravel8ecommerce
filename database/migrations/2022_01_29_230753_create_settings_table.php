@@ -19,7 +19,7 @@ class CreateSettingsTable extends Migration
             $table->string('phone');
             $table->string('phone2')->nullable();
             $table->string('address')->nullable();
-            $table->string('map')->nullable();
+            $table->string('map', 1000)->nullable();
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
