@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -33,4 +33,53 @@
             </div>
         </form>
     </x-jet-authentication-card>
+</x-guest-layout> --}}
+
+<x-guest-layout>
+    <main id="main" class="main-site left-sidebar">
+
+		<div class="container">
+
+			<div class="wrap-breadcrumb">
+				<ul>
+					<li class="item-link"><a href="{{ route('home') }}" class="link">home</a></li>
+					<li class="item-link"><span>Reset password</span></li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 col-md-offset-3">
+					<div class=" main-content-area">
+						<div class="wrap-login-item ">
+							<div class="login-form form-item form-stl">
+                                <x-jet-validation-errors class="mb-4" />
+								<form name="frm-login" method="POST" action="{{ route('password.update') }}">
+									@csrf
+                                    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                                    <fieldset class="wrap-title">
+										<h3 class="form-title">Reset password</h3>
+									</fieldset>
+									<fieldset class="wrap-input">
+										<label for="frm-login-email">Email Address:</label>
+										<input type="email" id="frm-login-email" name="email" placeholder="Type your email address" value="{{ $request->email }}" required autofocus>
+									</fieldset>
+                                    <fieldset class="wrap-input">
+										<label for="frm-login-password">Password:</label>
+										<input type="password" id="frm-login-password" name="password" placeholder="Enter new Password" value="" required autofocus>
+									</fieldset>
+
+                                    <fieldset class="wrap-input">
+										<label for="frm-login-passc">Confirm Password:</label>
+										<input type="password" id="frm-login-passc" name="password_confirmation" placeholder="Enter new Password" value="" required autofocus>
+									</fieldset>
+									<input type="submit" class="btn btn-submit" value="Reset password" name="submit">
+								</form>
+							</div>
+						</div>
+					</div><!--end main products area-->
+				</div>
+			</div><!--end row-->
+
+		</div><!--end container-->
+
+	</main>
 </x-guest-layout>
