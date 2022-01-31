@@ -105,6 +105,9 @@
                                                         <a title="Orders" href="{{ route('admin.contact') }}">Contact Messages</a>
                                                     </li>
                                                     <li class="menu-item" >
+                                                        <a title="Product Attributes" href="{{ route('admin.attributes') }}">Product Attributes</a>
+                                                    </li>
+                                                    <li class="menu-item" >
                                                         <a title="Orders" href="{{ route('admin.settings') }}">Settings</a>
                                                     </li>
                                                     <li class="menu-item">
