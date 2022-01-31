@@ -4,7 +4,7 @@
 
         <div class="wrap-breadcrumb">
             <ul>
-                <li class="item-link"><a href="#" class="link">home</a></li>
+                <li class="item-link"><a href="{{ route('home') }}" class="link">home</a></li>
                 <li class="item-link"><span>Digital & Electronics</span></li>
             </ul>
         </div>
@@ -127,8 +127,18 @@
                     <div class="widget-content">
                         <ul class="list-category">
                             @foreach($categories as $category)
-                            <li class="category-item">
+                            <li class="category-item {{ count($category->subCategories) > 0 ? 'has-child-cate' : '' }}">
                                 <a href="{{ route('product.category', ['category_slug' => $category->slug]) }}" class="cate-link">{{ $category->name }}</a>
+                                @if(count($category->subCategories) > 0)
+                                    <span class="toggle-control">+</span>
+                                    <ul class="sub-cate">
+                                        @foreach($category->subCategories as $scategory)
+                                            <li class="category-item">
+                                                <a href="#" class="cat-link"><i class="fa fa-caret-right"></i> {{ $scategory->name }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </li>
                             @endforeach
                         </ul>
