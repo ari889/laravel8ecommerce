@@ -15,4 +15,8 @@ class ProductAttribute extends Model
      * @var string
      */
     protected $table = 'product_attributes';
+
+    public function attributeValues(){
+        return $this->hasMany(AttrubuteValue::class);
+    }
 }

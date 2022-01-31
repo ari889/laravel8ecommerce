@@ -15,4 +15,8 @@ class AttrubuteValue extends Model
      * @var string
      */
     protected $table = 'attrubute_values';
+
+    public function productAttribute(){
+        return $this->belongsTo(ProductAttribute::class, 'product_attribute_id');
+    }
 }
