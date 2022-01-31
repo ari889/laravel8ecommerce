@@ -16,6 +16,7 @@ class AdminEditCategoryComponent extends Component
     public $scategory_id;
     public $scategory_slug;
 
+
     public function mount($category_slug, $scategory_slug=null){
         $this->category_slug = $category_slug;
         if($scategory_slug){
