@@ -13,10 +13,15 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 All Products
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <form action="">
+                                    <input type="text" class="form-control input-md" placeholder="Search...." wire:model="searchTerm">
+                                </form>
+                            </div>
+                            <div class="col-md-4">
                                 <a href="{{ route('admin.product.add') }}" class="btn btn-success pull-right">Add Product</a>
                             </div>
                         </div>
